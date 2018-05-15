@@ -1,16 +1,17 @@
 """
 This Operator pulls Reports from BingAds Reporting Api.
 """
-
+from datetime import datetime
 import sys
 import json
 import boto
 import boto.s3
-from datetime import datetime
+from boto.s3.key import Key
+
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
+
 from bing_ads_plugins.hooks.bing_ads_client_v11_hook import BingAdsHook
-from boto.s3.key import Key
 
 
 class BingAdsOperator(BaseOperator):
